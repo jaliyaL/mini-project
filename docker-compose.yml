@@ -1,8 +1,8 @@
-version: "3.9"
+
 services:
   api:
     build:
-      context: ./api
+      context: ./api   # path to your Dockerfile
     image: my-go-api:1.0   # custom tag for the built image
     ports:
       - "8080:8080"
@@ -10,4 +10,7 @@ services:
       - redis
 
   redis:
-    image: redis:7         # official image
+    image: redis:7         # official Redis image
+    ports:
+      - "6379:6379"
+
